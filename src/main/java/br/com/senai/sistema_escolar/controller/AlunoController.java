@@ -32,6 +32,7 @@ public class AlunoController {
     @GetMapping
     public List<Aluno> retornaTodos() {
         return repository.findAll();
+        
     }
     
      @PutMapping("/{id}")
