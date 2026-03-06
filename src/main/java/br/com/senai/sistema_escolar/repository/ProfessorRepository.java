@@ -6,4 +6,5 @@ import br.com.senai.sistema_escolar.entity.Professor;
 
 public interface ProfessorRepository extends JpaRepository<Professor, Long>{
     
+    boolean existsByEmail(String email);
 }

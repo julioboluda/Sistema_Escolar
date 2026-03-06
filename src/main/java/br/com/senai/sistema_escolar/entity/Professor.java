@@ -2,6 +2,7 @@ package br.com.senai.sistema_escolar.entity;
 
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,14 +21,11 @@ private Long id;
     private String nome;
 
 @NotBlank(message = "Precisa informar um email")
+@Column(unique = true)
     private String email;
 
 @NotBlank(message = "Professor precisa informar Titulação")
     private String titulacao;
-
-
-@OneToMany(mappedBy = "professor")
-    private List<Disciplina> disciplina;
 
 @OneToMany(mappedBy = "professor")
     private List<Aula> aula; 
@@ -62,14 +60,6 @@ private Long id;
 
     public void setTitulacao(String titulacao) {
         this.titulacao = titulacao;
-    }
-
-    public List<Disciplina> getDisciplina() {
-        return disciplina;
-    }
-
-    public void setDisciplina(List<Disciplina> disciplina) {
-        this.disciplina = disciplina;
     }
 
     public List<Aula> getAula() {

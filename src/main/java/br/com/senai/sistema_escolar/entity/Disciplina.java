@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 
 @Entity
 public class Disciplina {
@@ -21,6 +22,7 @@ private Long id;
 @NotBlank(message = "Disciplina precisa de um nome")
     private String nome;
 
+@PositiveOrZero
 @NotNull(message = "Precisa declarar a Carga Horária")
     private Integer carga_horaria;
 
