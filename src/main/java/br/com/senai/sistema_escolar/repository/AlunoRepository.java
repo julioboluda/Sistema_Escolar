@@ -6,4 +6,5 @@ import br.com.senai.sistema_escolar.entity.Aluno;
 
 public interface AlunoRepository extends JpaRepository<Aluno, Long>{
     
+     boolean existsByMatricula(String matricula);
 }

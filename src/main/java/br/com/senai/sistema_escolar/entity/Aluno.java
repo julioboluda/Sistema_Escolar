@@ -2,6 +2,8 @@ package br.com.senai.sistema_escolar.entity;
 
 import java.time.LocalDate;
 import java.util.List;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +23,7 @@ private Long id;
     private String nome;
 
 @NotNull(message = "Precisa da Matrícula")
+@Column(unique = true)
     private Integer matricula;
 
 @NotBlank(message = "Precisa declarar a data de nascimento")

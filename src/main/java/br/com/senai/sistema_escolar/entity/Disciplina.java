@@ -68,7 +68,7 @@ private Long id;
     }
 
     public void setAulas(List<Aula> aulas) {
-        this.aula = aula;
+        this.aula = aulas;
     }
 
 
