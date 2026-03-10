@@ -23,7 +23,7 @@ public class AulaController {
     @Autowired
     private AulaRepository repository;
 
-@PostMapping("path")
+    @PostMapping("path")
 public Response nomeAula(@Valid @RequestBody Aula entity) {
     repository.save(entity); 
     return new Response(201, "Aula Registrada");
