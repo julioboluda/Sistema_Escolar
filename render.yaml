@@ -1,0 +1,30 @@
+services:
+  # Serviço da API Spring Boot
+  - type: web
+    name: sistema-escolar-api
+    env: docker
+    plan: free
+    region: ohio
+    envVars:
+      - key: JDBC_DATABASE_URL
+        fromDatabase:
+          name: db-sistema-escolar
+          property: jdbcInternalUrl
+      - key: DB_USERNAME
+        fromDatabase:
+          name: db-sistema-escolar
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: db-sistema-escolar
+          property: password
+    # Aqui indicamos a porta que acabamos de confirmar
+    healthCheckPath: /api_sistema_escolar/swagger-ui.html
+
+databases:
+  # Serviço do Banco de Dados
+  - name: db-sistema-escolar
+    databaseName: db_escola
+    user: admin
+    plan: free
+    region: ohio
